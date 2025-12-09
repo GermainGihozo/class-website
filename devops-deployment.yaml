@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: node-deployment
+  name: node-app
 spec:
   replicas: 1
   selector:
@@ -13,8 +13,7 @@ spec:
         app: node-app
     spec:
       containers:
-        - name: node-container
-          image: class-btech:dev
-          imagePullPolicy: Never
-          ports:
-            - containerPort: 3000
+      - name: node-app
+        image: germainigihozo/devops-app:latest
+        ports:
+        - containerPort: 3000
